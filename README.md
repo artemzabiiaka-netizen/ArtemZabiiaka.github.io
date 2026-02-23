@@ -11,8 +11,8 @@
         
         body {
             font-family: 'Manrope', sans-serif;
-            background-color: #fafaf9; /* stone-50 */
-            color: #292524; /* stone-800 */
+            background-color: #fafaf9;
+            color: #292524;
         }
 
         .chart-container {
@@ -89,6 +89,14 @@
                 left: 50%;
             }
         }
+
+        /* Дополнительные классы для мобильной адаптации */
+        @media (max-width: 767px) {
+            .timeline-card {
+                padding-left: 3rem !important; /* 48px вместо 64px */
+                padding-right: 1rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-stone-50 min-h-screen flex flex-col">
@@ -162,15 +170,13 @@
                 </div>
                 
                 <div class="grid grid-cols-2 gap-4 w-full">
-                    <!-- Первая карточка с двумя числами (исправлено: добавлен закрывающий тег) -->
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover">
                         <div class="text-4xl font-bold text-orange-600 mb-1">30+</div>
                         <div class="text-4xl font-bold text-stone-800 mb-1">5.0</div>
                         <div class="text-sm text-stone-500 font-medium">Рейтинг клієнтів</div>
                         <div class="text-xs text-yellow-500 mt-1">★★★★★</div>
-                    </div> <!-- Закрыли первую карточку -->
+                    </div>
                     
-                    <!-- Вторая карточка на всю ширину -->
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover col-span-2">
                         <div class="text-4xl font-bold text-stone-800 mb-1">Full Cycle</div>
                         <div class="text-sm text-stone-500 font-medium">Виробництво відео під ключ</div>
@@ -403,7 +409,6 @@
             ]
         };
 
-        // --- Initialization ---
         document.addEventListener('DOMContentLoaded', () => {
             renderCharts();
             renderTimeline();
@@ -411,9 +416,7 @@
             setupFilters();
         });
 
-        // --- Charts Implementation ---
         function renderCharts() {
-            // Radar Chart: Skills Profile
             const ctxRadar = document.getElementById('skillsRadarChart').getContext('2d');
             new Chart(ctxRadar, {
                 type: 'radar',
@@ -422,7 +425,7 @@
                     datasets: [{
                         label: 'Рівень компетенції',
                         data: [5, 7, 6, 3, 5],
-                        backgroundColor: 'rgba(234, 88, 12, 0.2)', // Orange-600 with opacity
+                        backgroundColor: 'rgba(234, 88, 12, 0.2)',
                         borderColor: 'rgba(234, 88, 12, 1)',
                         pointBackgroundColor: 'rgba(234, 88, 12, 1)',
                         pointBorderColor: '#fff',
@@ -445,15 +448,11 @@
                             ticks: { display: false, stepSize: 1 }
                         }
                     },
-                    plugins: {
-                        legend: { display: false }
-                    }
+                    plugins: { legend: { display: false } }
                 }
             });
 
-            // Doughnut Chart: Tool Stack
             const ctxDoughnut = document.getElementById('toolsDoughnutChart').getContext('2d');
-            // Counting tools
             const softwareCount = 10;
             const aiCount = 8;
             const hardCount = 6;
@@ -464,11 +463,7 @@
                     labels: ['Adobe & Design', 'AI Tools', 'Core Skills'],
                     datasets: [{
                         data: [softwareCount, aiCount, hardCount],
-                        backgroundColor: [
-                            '#292524', // Stone-800
-                            '#ea580c', // Orange-600
-                            '#a8a29e'  // Stone-400
-                        ],
+                        backgroundColor: ['#292524', '#ea580c', '#a8a29e'],
                         borderWidth: 0
                     }]
                 },
@@ -478,32 +473,28 @@
                     plugins: {
                         legend: {
                             position: 'bottom',
-                            labels: {
-                                usePointStyle: true,
-                                font: { family: 'Manrope' }
-                            }
+                            labels: { usePointStyle: true, font: { family: 'Manrope' } }
                         }
                     }
                 }
             });
         }
 
-        // --- Timeline Implementation ---
         function renderTimeline() {
             const container = document.getElementById('timeline-container');
-            container.innerHTML = `<div class="timeline-line"></div>`; // Vertical line
+            container.innerHTML = `<div class="timeline-line"></div>`;
 
             resumeData.experience.forEach((job, index) => {
                 const isEven = index % 2 === 0;
                 
-                // HTML for the timeline Item
                 const itemHTML = `
                     <div class="relative w-full mb-12 flex flex-col md:flex-row ${isEven ? 'md:justify-start' : 'md:justify-end'}">
                         <div class="timeline-dot">
                             <span class="w-2 h-2 rounded-full bg-white block"></span>
                         </div>
-                        <div class="w-full md:w-5/12 pl-16 md:pl-0 ${isEven ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'}">
-                            <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-100 hover:border-orange-200 transition-colors cursor-pointer group" onclick="toggleJobDetails(${job.id})">
+                        <!-- На мобильных используем pl-12 вместо pl-16 и добавляем break-words -->
+                        <div class="w-full md:w-5/12 pl-12 md:pl-0 ${isEven ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'}">
+                            <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-100 hover:border-orange-200 transition-colors cursor-pointer group break-words" onclick="toggleJobDetails(${job.id})">
                                 <span class="inline-block px-2 py-1 bg-stone-100 text-stone-600 text-xs rounded mb-2">${job.period}</span>
                                 <h4 class="font-bold text-lg text-stone-800 group-hover:text-orange-600 transition-colors">${job.company}</h4>
                                 <h5 class="font-semibold text-stone-600 text-sm mb-2">${job.role}</h5>
@@ -539,7 +530,6 @@
             }
         }
 
-        // --- Skills Implementation ---
         function renderSkills(filter) {
             const grid = document.getElementById('skills-grid');
             grid.innerHTML = '';
@@ -570,7 +560,6 @@
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
-                    // Update active state
                     buttons.forEach(b => {
                         b.classList.remove('bg-stone-800', 'text-white');
                         b.classList.add('bg-stone-100', 'text-stone-600');
@@ -578,7 +567,6 @@
                     e.target.classList.remove('bg-stone-100', 'text-stone-600');
                     e.target.classList.add('bg-stone-800', 'text-white');
 
-                    // Render
                     renderSkills(e.target.dataset.filter);
                 });
             });
