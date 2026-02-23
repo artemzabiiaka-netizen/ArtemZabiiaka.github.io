@@ -90,23 +90,6 @@
             }
         }
     </style>
-    <!-- Chosen Palette: Warm Neutrals (Stone/Warm Grey) with subtle Orange accents -->
-    <!-- Application Structure Plan: 
-         1. Hero Section: Personal intro, contacts, and core value proposition.
-         2. Dashboard "Metrics": Visualizing the quantitative data (Projects, Rating) and abstracting skills into a "Competence Balance" chart.
-         3. Interactive Experience Timeline: A chronological view of work history with expandable details for key achievements.
-         4. Skills & Tools Ecosystem: A filterable view of the tech stack (Adobe, AI, Soft Skills) with a breakdown chart.
-         5. Education & Growth: Academic background.
-         The structure is designed to move from "Who is this?" -> "What are the numbers?" -> "What is the history?" -> "How do they do it?".
-    -->
-    <!-- Visualization & Content Choices:
-         - Radar Chart: To show the balance between Creative, Technical, AI, and Management skills. Goal: Illustrate the "Full Cycle" capability.
-         - Doughnut Chart: To visualize the toolset distribution (Adobe vs AI vs Others). Goal: Emphasize the strong AI integration.
-         - Interactive Counters: For "30+ Projects" and "5.0 Rating" to draw attention to key success metrics.
-         - Timeline: To organize experience chronologically with interactive toggles to reduce text density.
-         - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
-    -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 </head>
 <body class="bg-stone-50 min-h-screen flex flex-col">
 
@@ -116,7 +99,7 @@
             <div class="flex items-center space-x-2">
                 <div class="relative w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center text-white font-bold text-xl overflow-hidden border border-stone-200">
                     <span class="z-0">АЗ</span>
-                    <img src="https://ibb.co/b5DNrgnC" alt="Артем Забіяка" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.display='none'">
+                    <img src="https://i.ibb.co/W4b3CzKy/6b508ae3-5502-4a03-890c-4ef3734063c9.png" alt="Артем Забіяка" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.display='none'">
                 </div>
                 <div>
                     <h1 class="text-xl font-bold leading-none">Артем Забіяка</h1>
@@ -172,22 +155,26 @@
             <!-- Quick Stats Cards & Photo -->
             <div class="flex flex-col items-center gap-6">
                 <div class="relative w-48 h-48 md:w-56 md:h-56 bg-stone-800 rounded-full flex items-center justify-center text-white font-bold text-6xl overflow-hidden border-4 border-white shadow-xl">
-    <span class="z-0">А3</span>
-    <img src="https://i.ibb.co/W4b3CzKy/6b508ae3-5502-4a03-890c-4ef3734063c9.png" 
-         alt="Артем Забіяка" 
-         class="absolute inset-0 w-full h-full object-cover z-10">
-</div>
+                    <span class="z-0">А3</span>
+                    <img src="https://i.ibb.co/W4b3CzKy/6b508ae3-5502-4a03-890c-4ef3734063c9.png" 
+                         alt="Артем Забіяка" 
+                         class="absolute inset-0 w-full h-full object-cover z-10">
+                </div>
                 
                 <div class="grid grid-cols-2 gap-4 w-full">
+                    <!-- Первая карточка с двумя числами (исправлено: добавлен закрывающий тег) -->
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover">
                         <div class="text-4xl font-bold text-orange-600 mb-1">30+</div>
-                    <div class="text-4xl font-bold text-stone-800 mb-1">5.0</div>
-                    <div class="text-sm text-stone-500 font-medium">Рейтинг клієнтів</div>
-                    <div class="text-xs text-yellow-500 mt-1">★★★★★</div>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover col-span-2">
-                    <div class="text-4xl font-bold text-stone-800 mb-1">Full Cycle</div>
-                    <div class="text-sm text-stone-500 font-medium">Виробництво відео під ключ</div>
+                        <div class="text-4xl font-bold text-stone-800 mb-1">5.0</div>
+                        <div class="text-sm text-stone-500 font-medium">Рейтинг клієнтів</div>
+                        <div class="text-xs text-yellow-500 mt-1">★★★★★</div>
+                    </div> <!-- Закрыли первую карточку -->
+                    
+                    <!-- Вторая карточка на всю ширину -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover col-span-2">
+                        <div class="text-4xl font-bold text-stone-800 mb-1">Full Cycle</div>
+                        <div class="text-sm text-stone-500 font-medium">Виробництво відео під ключ</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -596,7 +583,6 @@
                 });
             });
         }
-
     </script>
 </body>
 </html>
