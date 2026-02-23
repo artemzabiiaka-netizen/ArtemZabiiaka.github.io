@@ -7,90 +7,50 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap');
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap');
+    
+    body {
+        font-family: 'Manrope', sans-serif;
+        background-color: #fafaf9;
+        color: #292524;
+    }
+
+    /* Стабілізація блоків, щоб не з'їжджали */
+    .container {
+        width: 100% !important;
+        max-width: 1000px !important; /* Фіксуємо ширину для стабільності */
+        margin: 0 auto;
+    }
+
+    .chart-container {
+        position: relative;
+        width: 100%;
+        height: 300px !important; /* Жорстка висота, щоб блоки не стрибали */
+        margin: 0 auto;
+    }
+
+    /* НАЛАШТУВАННЯ ДЛЯ PDF */
+    @media print {
+        body { background-color: white !important; }
+        .no-print, .filter-buttons, .filter-btn { display: none !important; } /* Ховаємо зайве */
         
-        body {
-            font-family: 'Manrope', sans-serif;
-            background-color: #fafaf9; /* stone-50 */
-            color: #292524; /* stone-800 */
-        }
-
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 400px;
-        }
-
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-            }
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f5f5f4; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #d6d3d1; 
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #a8a29e; 
-        }
-
-        .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        .grid { 
+            display: grid !important; 
+            grid-template-columns: repeat(2, 1fr) !important; /* Робимо навички у два стовпчики */
         }
         
-        .timeline-line {
-            position: absolute;
-            left: 24px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: #e7e5e4;
-            z-index: 0;
+        section { page-break-inside: avoid; } /* Щоб блоки не розривалися між сторінками */
+        
+        canvas { 
+            max-width: 100% !important; 
+            height: auto !important; 
         }
-        @media (min-width: 768px) {
-            .timeline-line {
-                left: 50%;
-                margin-left: -1px;
-            }
-        }
-        .timeline-dot {
-            position: absolute;
-            left: 24px;
-            margin-left: -16px;
-            z-index: 20;
-            width: 32px;
-            height: 32px;
-            background-color: #292524;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        @media (min-width: 768px) {
-            .timeline-dot {
-                left: 50%;
-            }
-        }
-    </style>
+
+        /* Змушуємо кольори відображатися в PDF */
+        * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    }
+</style>
     <!-- Chosen Palette: Warm Neutrals (Stone/Warm Grey) with subtle Orange accents -->
     <!-- Application Structure Plan: 
          1. Hero Section: Personal intro, contacts, and core value proposition.
