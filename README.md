@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
@@ -112,11 +113,11 @@
 
     <!-- Navigation / Header -->
     <header class="bg-white border-b border-stone-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-6xl mx-auto px-4 py-4 w-full flex justify-between items-center">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <div class="relative w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center text-white font-bold text-xl overflow-hidden border border-stone-200">
                     <span class="z-0">АЗ</span>
-                   <img src="https://i.ibb.co/W4b3CzKy/6b508ae3-5502-4a03-890c-4ef3734063c9.png" alt="Артем Забіяка" class="absolute inset-0 w-full h-full object-cover z-10">
+                    <img src="https://ibb.co/b5DNrgnC" alt="Артем Забіяка" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.display='none'">
                 </div>
                 <div>
                     <h1 class="text-xl font-bold leading-none">Артем Забіяка</h1>
@@ -141,7 +142,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow max-w-6xl mx-auto px-4 py-8 w-full space-y-12">
+    <main class="flex-grow container mx-auto px-4 py-8 space-y-12">
 
         <!-- Section 1: Hero & Intro -->
         <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -179,27 +180,12 @@
 </div>
                 
                 <div class="grid grid-cols-2 gap-4 w-full">
-
-    <!-- Projects -->
-    <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover">
-        <div class="text-4xl font-bold text-orange-600 mb-1">30+</div>
-        <div class="text-sm text-stone-500 font-medium">Проєктів</div>
-    </div>
-
-    <!-- Rating -->
-    <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover">
-        <div class="text-4xl font-bold text-stone-800 mb-1">5.0</div>
-        <div class="text-sm text-stone-500 font-medium">Рейтинг клієнтів</div>
-        <div class="text-xs text-yellow-500 mt-1">★★★★★</div>
-    </div>
-
-    <!-- Full Cycle -->
-    <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover col-span-2">
-        <div class="text-4xl font-bold text-stone-800 mb-1">Full Cycle</div>
-        <div class="text-sm text-stone-500 font-medium">Виробництво відео під ключ</div>
-    </div>
-
-</div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover">
+                        <div class="text-4xl font-bold text-orange-600 mb-1">30+</div>
+                    <div class="text-4xl font-bold text-stone-800 mb-1">5.0</div>
+                    <div class="text-sm text-stone-500 font-medium">Рейтинг клієнтів</div>
+                    <div class="text-xs text-yellow-500 mt-1">★★★★★</div>
+                </div>
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover col-span-2">
                     <div class="text-4xl font-bold text-stone-800 mb-1">Full Cycle</div>
                     <div class="text-sm text-stone-500 font-medium">Виробництво відео під ключ</div>
@@ -329,7 +315,7 @@
 
     <!-- Footer -->
     <footer class="bg-stone-900 text-stone-300 py-12 mt-12">
-        <div class="max-w-6xl mx-auto px-4 w-full text-center">
+        <div class="container mx-auto px-4 text-center">
             <h2 class="text-2xl font-bold text-white mb-6">Готові до співпраці?</h2>
             <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-8">
                 <a href="https://drive.google.com/drive/u/1/folders/1QKtvepXXqdSTxF95KS8qJ02E8A0Fy7Ym" target="_blank" class="flex items-center gap-2 text-orange-400 hover:text-orange-300 transition-colors font-bold">
