@@ -152,7 +152,7 @@
                 </div>
             </div>
             
-            <!-- Оновлений блок метрик: три карточки -->
+            <!-- Оновлений блок метрик: три карточки з правильним вирівнюванням -->
             <div class="flex flex-col items-center gap-6">
                 <div class="relative w-48 h-48 md:w-56 md:h-56 bg-stone-800 rounded-full flex items-center justify-center text-white font-bold text-6xl overflow-hidden border-4 border-white shadow-xl">
                     <span class="z-0">А3</span>
@@ -161,23 +161,23 @@
                          class="absolute inset-0 w-full h-full object-cover z-10">
                 </div>
                 
-                <!-- Три карточки статистики -->
+                <!-- Три карточки статистики, вирівняні по вертикалі -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
                     <!-- Замовлення -->
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover">
-                        <div class="text-sm text-stone-500 font-medium mb-1">Замовлень</div>
-                        <div class="text-4xl font-bold text-orange-600 mb-1">30+</div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover flex flex-col h-full">
+                        <div class="text-sm text-stone-500 font-medium">Замовлення</div>
+                        <div class="text-4xl font-bold text-orange-600 mt-auto">30+</div>
                     </div>
                     <!-- Рейтинг -->
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover">
-                        <div class="text-4xl font-bold text-stone-800 mb-1">5.0</div>
-                        <div class="text-sm text-stone-500 font-medium">Рейтинг клієнтів</div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover flex flex-col h-full">
+                        <div class="text-4xl font-bold text-stone-800">5.0</div>
+                        <div class="text-sm text-stone-500 font-medium mt-2">Рейтинг клієнтів</div>
                         <div class="text-xs text-yellow-500 mt-1">★★★★★</div>
                     </div>
                     <!-- Досвід -->
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover">
-                        <div class="text-sm text-stone-500 font-medium mb-1">Роки досвіду</div>
-                        <div class="text-4xl font-bold text-orange-600 mb-1">3+</div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover flex flex-col h-full">
+                        <div class="text-sm text-stone-500 font-medium">Роки досвіду</div>
+                        <div class="text-4xl font-bold text-orange-600 mt-auto">3+</div>
                     </div>
                 </div>
             </div>
