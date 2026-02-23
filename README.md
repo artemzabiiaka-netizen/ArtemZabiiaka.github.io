@@ -89,14 +89,6 @@
                 left: 50%;
             }
         }
-
-        /* Дополнительные классы для мобильной адаптации */
-        @media (max-width: 767px) {
-            .timeline-card {
-                padding-left: 3rem !important; /* 48px вместо 64px */
-                padding-right: 1rem;
-            }
-        }
     </style>
 </head>
 <body class="bg-stone-50 min-h-screen flex flex-col">
@@ -160,7 +152,7 @@
                 </div>
             </div>
             
-            <!-- Quick Stats Cards & Photo -->
+            <!-- Оновлений блок метрик: три карточки -->
             <div class="flex flex-col items-center gap-6">
                 <div class="relative w-48 h-48 md:w-56 md:h-56 bg-stone-800 rounded-full flex items-center justify-center text-white font-bold text-6xl overflow-hidden border-4 border-white shadow-xl">
                     <span class="z-0">А3</span>
@@ -169,17 +161,23 @@
                          class="absolute inset-0 w-full h-full object-cover z-10">
                 </div>
                 
-                <div class="grid grid-cols-2 gap-4 w-full">
+                <!-- Три карточки статистики -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
+                    <!-- Замовлення -->
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover">
+                        <div class="text-sm text-stone-500 font-medium mb-1">Замовлень</div>
                         <div class="text-4xl font-bold text-orange-600 mb-1">30+</div>
+                    </div>
+                    <!-- Рейтинг -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover">
                         <div class="text-4xl font-bold text-stone-800 mb-1">5.0</div>
                         <div class="text-sm text-stone-500 font-medium">Рейтинг клієнтів</div>
                         <div class="text-xs text-yellow-500 mt-1">★★★★★</div>
                     </div>
-                    
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover col-span-2">
-                        <div class="text-4xl font-bold text-stone-800 mb-1">Full Cycle</div>
-                        <div class="text-sm text-stone-500 font-medium">Виробництво відео під ключ</div>
+                    <!-- Досвід -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 text-center card-hover">
+                        <div class="text-sm text-stone-500 font-medium mb-1">Роки досвіду</div>
+                        <div class="text-4xl font-bold text-orange-600 mb-1">3+</div>
                     </div>
                 </div>
             </div>
@@ -492,7 +490,6 @@
                         <div class="timeline-dot">
                             <span class="w-2 h-2 rounded-full bg-white block"></span>
                         </div>
-                        <!-- На мобильных используем pl-12 вместо pl-16 и добавляем break-words -->
                         <div class="w-full md:w-5/12 pl-12 md:pl-0 ${isEven ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'}">
                             <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-100 hover:border-orange-200 transition-colors cursor-pointer group break-words" onclick="toggleJobDetails(${job.id})">
                                 <span class="inline-block px-2 py-1 bg-stone-100 text-stone-600 text-xs rounded mb-2">${job.period}</span>
